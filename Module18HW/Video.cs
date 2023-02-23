@@ -46,10 +46,10 @@ namespace Module18HW
                 Console.WriteLine("\nФайл будет скачан на рабочий стол ...\n");
 
                 var description = await client.Videos.GetAsync(url);
-                string fileneame = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\";
-                fileneame += description.Title + ".mp4";
+                string fileName = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + @"\";
+                fileName += description.Title + ".mp4";
 
-                await client.Videos.DownloadAsync(url, fileneame, builder => builder.SetPreset(ConversionPreset.UltraFast));
+                await client.Videos.DownloadAsync(url, fileName, builder => builder.SetPreset(ConversionPreset.UltraFast));
 
                 Console.WriteLine("\nФайл успешно загружен! Выберите следующую команду меню \n");
             }
